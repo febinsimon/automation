@@ -7,11 +7,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import com.inetbanking.utilities.ReadConfig;
+
 public class BaseClass {
 	
-	public String uname="mngr473148";
-	public String pword="ysAvuqu";
-	public String baseURL="https://demo.guru99.com/v4/";
+	
+	ReadConfig readconfig=new ReadConfig();
+	
+	public String baseURL= readconfig.getApplicationURL();
+	
+	public String uname= readconfig.getusername();
+	public String pword= readconfig.getpassword();
+	
+	
 	public static Logger Logger;
 
 
@@ -19,6 +27,7 @@ public class BaseClass {
 	public static WebDriver driver;
 	
 	
+	@SuppressWarnings("static-access")
 	@BeforeClass
 	public void setup() {
 		

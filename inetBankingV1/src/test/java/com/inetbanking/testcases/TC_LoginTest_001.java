@@ -14,7 +14,7 @@ public class TC_LoginTest_001 extends BaseClass{
 	public void loginTest() {
 		
 		driver.get(baseURL);
-		
+		Logger.info("login url done");
 		LoginPage LP =new LoginPage(driver);
 		
 		LP.setUsername(uname);
@@ -29,7 +29,7 @@ public class TC_LoginTest_001 extends BaseClass{
 
 		if(driver.getTitle().equals("Guru99 Bank Manager HomePage")) {
 			
-			Logger.info("title  correct");
+			
 			Assert.assertTrue(true);
 			
 		}else {
