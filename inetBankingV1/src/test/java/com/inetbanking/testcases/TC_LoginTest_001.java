@@ -3,6 +3,7 @@ package com.inetbanking.testcases;
 import org.junit.Assert;
 import org.testng.annotations.Test;
 
+import com.beust.jcommander.Parameter;
 import com.inetbanking.pageObjects.LoginPage;
 
 
