@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="inetBanking">
+
+<listeners>
+
+<listener class-name="com.inetbanking.utilities.Reporting"/>
+
+ </listeners>
   <test name="Test Case1">
       <parameter name="browser" value="edge"/>
+     
+      <classes>
+      <class name="com.inetbanking.testcases.TC_LoginTest_001"/>
+      </classes>
+ 
+     
+  </test> <!-- Test -->
+  
+<listeners>
+
+<listener class-name="com.inetbanking.utilities.Reporting"/>
+
+ </listeners>
+  
+   <test name="Test Case2">
+      <parameter name="browser" value="chrome"/>
      
       <classes>
       <class name="com.inetbanking.testcases.TC_LoginTest_001"/>
