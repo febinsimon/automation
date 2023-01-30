@@ -2,6 +2,7 @@ package com.inetbanking.testcases;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
@@ -34,6 +35,7 @@ public class BaseClass {
 	
 	public static WebDriver driver;
 	
+	
 	@Parameters("browser")
 	@SuppressWarnings("static-access")
 	@BeforeClass
@@ -41,9 +43,9 @@ public class BaseClass {
 		
 		
 		
+		Logger = Logger.getLogger("ebanking");
+		PropertyConfigurator.configure("log4j.properties");
 
-Logger = Logger.getLogger("ebanking");
-PropertyConfigurator.configure("log4j.properties");
 
 if (br.equals("chrome")) {
 	
@@ -56,7 +58,8 @@ else if (br.equals("edge")) {
 	driver= new EdgeDriver();
 	
 }
-		
+driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+driver.get(baseURL);	
 		
 	}
 
